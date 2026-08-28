@@ -1,0 +1,49 @@
+{
+  "findings": [
+    {
+      "id": "F-101",
+      "title": "Incomplete intake records delay assignment",
+      "theme": "Intake quality",
+      "summary": "Requests missing an owner, due date, or source reference require manual follow-up before work can begin.",
+      "evidence": [
+        "12 of 40 sampled requests were missing at least one required intake field.",
+        "Eight of those requests waited more than one business day for clarification."
+      ],
+      "recommended_action": "Validate the required intake fields before a request enters the assignment queue.",
+      "source": {
+        "label": "Synthetic intake audit",
+        "url": "https://example.com/#intake-audit"
+      }
+    },
+    {
+      "id": "F-102",
+      "title": "Escalations use inconsistent categories",
+      "theme": "Case routing",
+      "summary": "Similar escalation reasons are recorded under several labels, which makes routing and trend review less reliable.",
+      "evidence": [
+        "Five labels were used for the same access-related escalation pattern.",
+        "Two cases were routed to the wrong queue before being reassigned."
+      ],
+      "recommended_action": "Replace overlapping escalation labels with one short controlled list and an explicit fallback category.",
+      "source": {
+        "label": "Synthetic routing review",
+        "url": "https://example.com/#routing-review"
+      }
+    },
+    {
+      "id": "F-103",
+      "title": "Missing source notes increase rework",
+      "theme": "Intake quality",
+      "summary": "Reviewers repeat discovery work when a request states a conclusion without linking the note, record, or observation that supports it.",
+      "evidence": [
+        "Nine sampled requests required a second source lookup.",
+        "The repeated lookup added an estimated 95 minutes across the sample."
+      ],
+      "recommended_action": "Require one source label and link for every submitted finding before review begins.",
+      "source": {
+        "label": "Synthetic rework sample",
+        "url": "https://example.com/#rework-sample"
+      }
+    }
+  ]
+}
